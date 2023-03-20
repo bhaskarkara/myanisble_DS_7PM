@@ -18,5 +18,5 @@
 
 [mywebservers:vars]
 var01=value
-mypakageonubantu= apache22222
+mypakageonubantu= apache2
 mypakageonredhat= httpd
