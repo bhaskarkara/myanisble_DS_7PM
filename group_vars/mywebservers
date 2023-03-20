@@ -2,4 +2,4 @@
 mypakageonubantu: apache2
 mypakageonredhat: httpd
 myjavapakageonubantu: openjdk-8-jre
-myjavapakageonredhat: java-1.6.0-openjdk
+myjavapakageonredhat: java-1.8.0-openjdk
