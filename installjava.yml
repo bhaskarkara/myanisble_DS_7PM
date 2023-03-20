@@ -3,13 +3,13 @@
   become: yes
   tasks:
    - name: i want install java on ubantu
-      apt:
+     apt:
         name: "{{myjavapakageonubantu}}"
         state: present
      when:   ansible_os_family== "Debian"
 
    - name: i want install java on redhat
-      yum:
+     yum:
         name: "{{myjavapakageonredhat}}"
         state: present
      when: ansible_os_family== "RedHat"
