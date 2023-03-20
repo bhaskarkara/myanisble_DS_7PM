@@ -4,7 +4,7 @@
   tasks:
     - name: i want to install apach on ubantu
       apt:
-        name: apache2
+        name: "{{mypakageonredhat}}"
         state: present  
       when: ansible_os_family== "Debian"
     - name: i want start service on ubantu
@@ -14,7 +14,7 @@
       when: ansible_os_family== "Debian"
     - name: i want to install httpd on redhat
       yum:
-        name: httpd
+        name: "{{mypakageonredhat}}"
         state: present  
       when: ansible_os_family== "RedHat"  
     - name: i want start service on redhat
