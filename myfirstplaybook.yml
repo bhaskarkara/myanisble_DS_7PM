@@ -1,9 +1,7 @@
 ---
-- hosts: all
+- hosts: mywebservers
   become: yes
-  tasks: 
-       
-
+  tasks:
     - name: i want to install apach on ubantu
       apt:
         name: apache2
