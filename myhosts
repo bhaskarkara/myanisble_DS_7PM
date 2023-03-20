@@ -16,7 +16,4 @@
 [myredhatservers]
 172.31.19.80
 
-[mywebservers:vars]
-var01=value
-mypakageonubantu= apache2
-mypakageonredhat= httpd
+
