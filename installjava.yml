@@ -1,0 +1,17 @@
+---
+- host: mywebservers
+  become: yes
+  tasks:
+   - name: i want install java on ubantu
+      apt:
+        name: "{{myjavapakageonubantu}}"
+        state: present
+     when:   ansible_os_family== "Debian"
+
+   - name: i want install java on redhat
+      yum:
+        name: "{{myjavapakageonredhat}}"
+        state: present
+     when: ansible_os_family== "RedHat"
+
+     
