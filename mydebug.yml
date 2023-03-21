@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+   - name: i want install command
+       command: hostname -f
+       register: myresult
+   
+   - name: iwant display result
+     debug:
+       msg: "{{myresult}}"
