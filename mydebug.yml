@@ -2,9 +2,9 @@
 - hosts: 172.31.25.126
   become: yes
   tasks:
-  - name: i want install command
-     command: hostname -f
-     register: myresult
+  - name: i want to excute command
+    command: hostname -f
+    register: myresult
    
   - name: i want display result
     debug:
