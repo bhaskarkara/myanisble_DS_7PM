@@ -3,9 +3,9 @@
   become: yes
   tasks:
   - name: i want install command
-      command: hostname -f
-      register: myresult
+     command: hostname -f
+     register: myresult
    
-  - name: iwant display result
+  - name: i want display result
     debug:
-      msg: "{{myresult}}"
+     msg: "{{myresult}}"
