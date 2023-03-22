@@ -1,0 +1,8 @@
+---
+- hosts: 172.31.25.126
+  become: yes
+  tasks:
+  - name: i want create a myfile
+    file:
+     path: /home/ubantu/
+     state: touch
