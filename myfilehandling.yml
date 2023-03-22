@@ -31,4 +31,4 @@
   - name: startmywebser
     service:
       name: apache2
-      state: present
+      state: restarted
