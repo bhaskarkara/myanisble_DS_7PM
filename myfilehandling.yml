@@ -10,7 +10,7 @@
     apt:
      name: apache2
      state: present
-  notify: startmywebser
+    notify: startmywebser
   - name: i want to copy the textfile
     copy:
      src: mytestfile
@@ -19,7 +19,7 @@
     template:
       src: mydynamicfile.j2
       dest: /var/www/html/index.html
-  notify: startmywebser
+    notify: startmywebser
   
   - name: i want to download the file
     get_url:
