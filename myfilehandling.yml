@@ -14,3 +14,7 @@
     copy:
      src: mytestfile
      dest: /var/www/html/index.html
+  - name: i want create dynamic file
+    template:
+      src: mydynamicfile.j2
+      dest: /var/www/html/index.html
