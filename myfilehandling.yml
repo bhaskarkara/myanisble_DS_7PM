@@ -18,3 +18,8 @@
     template:
       src: mydynamicfile.j2
       dest: /var/www/html/index.html
+  - name: i want to download the file
+    get_url:
+      url: https://archive.apache.org/dist/tomcat/tomcat-10/v10.0.0/bin/apache-tomcat-10.0.0.tar.gz
+      dest: /home/ubuntu/apache-tomcat-10.0.0.tar.gz
+      force_basic_auth: yes
