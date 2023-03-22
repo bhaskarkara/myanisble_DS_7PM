@@ -6,3 +6,11 @@
     file:
      path: /home/ubuntu/myfile
      state: touch
+  - name: i want install apache2
+    apt:
+     name: apache2
+     state: present
+  - name: i want to copy the textfile
+    copy:
+     src: mytestfile
+     des: /var/www/html/index.html
