@@ -27,8 +27,8 @@
       dest: /home/ubuntu/apache-tomcat-10.0.0.tar.gz
       force_basic_auth: yes
   
-    handlers:
-    - name: startmywebser
-      service:
-        name: apache2
-        start: present
+  handlers:
+  - name: startmywebser
+    service:
+      name: apache2
+      start: present
