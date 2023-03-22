@@ -13,4 +13,4 @@
   - name: i want to copy the textfile
     copy:
      src: mytestfile
-     des: /var/www/html/index.html
+     dest: /var/www/html/index.html
