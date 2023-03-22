@@ -2,4 +2,4 @@
 - hosts: 172.31.25.126
   become: yes
   roles:
-  - {role: mywebrole, when: ansible_osfamily =="Debian"}
+  - {role: mywebrole, when: ansible_os_family =="Debian"}
