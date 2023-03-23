@@ -1,0 +1,17 @@
+---
+- name: add tomcat user
+  template:
+       src: templates/mytomcatuser.j2
+       dest: /opt/tomcat/conf/tomcat-users.xml
+- name: copy the tom context file
+  template:
+       src: templates/mytomcontext.j2
+       dest: /opt/tomcat/webapps/manager/META-INF/context.xml
+- name: copy the tomhost context file
+  template:
+       src: templates/mytomhostcontext.j2
+       dest: /opt/tomcat/webapps/host-manager/META-INF/context.xml
+- name: copy the tomservice context file
+  template:
+       src: templates/mytomservicecontext.j2
+       dest: /etc/systemd/system/tomcat.service
