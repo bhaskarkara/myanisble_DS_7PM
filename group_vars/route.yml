@@ -1,0 +1,26 @@
+---
+- name: Configure OSPF routing
+  hosts: all
+  become: true
+
+  vars:
+    ospf_process_id: 1
+    ospf_networks:
+      - network: 192.168.1.0/24
+        area: 0
+      - network: 192.168.2.0/24
+        area: 0
+      - network: 192.168.3.0/24
+        area: 0
+
+  tasks:
+    - name: Install ospfd
+      apt:
+        name: quagga
+        state: present
+
+    - name: Configure OSPF
+      template:
+        src: ospfd.conf.j2
+        dest: /etc/quagga/ospfd.conf
+      notify: Restart OSPF
