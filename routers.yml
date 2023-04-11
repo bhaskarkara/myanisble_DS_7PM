@@ -1,16 +1,16 @@
 ---
 - name: Configure OSPF routing
-  hosts: all
+  hosts: routers
   become: true
 
   vars:
     ospf_process_id: 1
     ospf_networks:
-      - network: 192.168.1.0/24
+      - network: 172.31.16.0/28
         area: 0
-      - network: 192.168.2.0/24
+      - network: 172.31.32.0/28
         area: 0
-      - network: 192.168.3.0/24
+      - network: 172.31.48.0/28
         area: 0
 
   tasks:
@@ -24,3 +24,19 @@
         src: ospfd.conf.j2
         dest: /etc/quagga/ospfd.conf
       notify: Restart OSPF
+
+    - name: Configure interface IP addresses
+      interface:
+        name: "{{ item.interface }}"
+        ip_address: "{{ item.ip_address }}"
+        state: present
+      with_items:
+        - { interface: eth0, ip_address: "172.31.16.1/28" }
+        - { interface: eth1, ip_address: "172.31.32.1/28" }
+        - { interface: eth2, ip_address: "172.31.48.1/28" }
+
+  handlers:
+    - name: Restart OSPF
+      service:
+        name: ospfd
+        state: restarted
