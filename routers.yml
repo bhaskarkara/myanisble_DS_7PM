@@ -1,6 +1,6 @@
 ---
 - name: Configure OSPF routing
-  hosts: routers
+  hosts: all
   become: true
 
   vars:
